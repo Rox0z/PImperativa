@@ -8,7 +8,9 @@ int is_zero(int x);
 int is_pos(int x);
 
 int dif(int x, int y) {
-    return is_zero(y) ? x : dif(pred(x), pred(y));
+    return is_zero(y)           // Verifica se é zero
+    ? x                         // Se sim retorna X
+    : dif(pred(x), pred(y));    // Se não repete a diferença de X-1 e Y-1
 }
 
 int main(void) {
