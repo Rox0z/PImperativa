@@ -11,17 +11,17 @@ int sum(int x, int y) {
     return is_zero(y) ? x : sum(succ(x), pred(y));
 }
 
-int power(int x, int y) {
-    return is_zero(y) ? x : is_zero(x) ? 0 : power(sum(x, x), pred(y));
+int mult(int x, int y) {
+    return is_zero(x) || is_zero(y) ? 0 : sum(x, mult(x, pred(y)));
 }
 
-int sq(int x) {
-    return is_zero(x) ? 0 : power(succ(1), pred(x));
+int power(int x, int y) {
+    return is_zero(y) ? 1 : is_zero(pred(y)) ? x : mult(power(x, pred(y)), x);
 }
 
 int main(void) {
     int x;
     scanf("%d", &x);
-    printf("%d\n", sq(x));
+    printf("%d\n", power(succ(1), x));
     return 0;
 }
