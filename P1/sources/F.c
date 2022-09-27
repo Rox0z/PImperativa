@@ -7,24 +7,21 @@ int pred(int x);
 int is_zero(int x);
 int is_pos(int x);
 
-int dif(int x, int y) {
-    return is_zero(y) ? x : dif(pred(x), pred(y));
+int dpred(int x) {
+    return pred(pred(x));
 }
 
-int less_eq(int x, int y) {
-    return is_pos(dif(y,x));
-}
-int dpred(int x, int y) {
-    return less_eq(y, 0) ? x : dpred(pred(x), pred(pred(y)));
+int dsucc(int x) {
+    return succ(succ(x));
 }
 
-int half(int x) {
-    return is_zero(x) ? x : dpred(x,x);
+int half(int x, int y) {
+    return is_zero(y) ? x : is_pos(x) ? half(pred(x), dpred(y)) : half(succ(x), dsucc(y));
 }
 
 int main(void) {
     int x;
     scanf("%d", &x);
-    printf("%d\n",half(x));
+    printf("%d\n",half(x, x));
     return 0;
 }
