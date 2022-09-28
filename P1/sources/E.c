@@ -12,7 +12,7 @@ int sum(int x, int y) { // Doc no exercicio B
 }
 
 int neg_sum(int x, int y) { // Sum para numeros negativos
-    return is_zero(y) ? x : dif(pred(x), succ(y));
+    return is_zero(y) ? x : neg_sum(pred(x), succ(y));
 }
 
 int twice(int x) { 
