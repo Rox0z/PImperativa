@@ -19,8 +19,8 @@ int half(int x, int y) {
     return is_zero(y)               // Verifica se é zero
     ? x                             // Se sim retorna X
     : is_pos(x)                     // Se não verifica se é positivo
-        ? half(pred(x), dpred(y))       // Se sim refaz o comando com X-1 e Y-2
-        : half(succ(x), dsucc(y));      // Se não refaz o comando com X+1 e Y+2
+        ? is_pos(y) ? half(pred(x), dpred(y)) : x       // Se sim refaz o comando com X-1 e Y-2
+        : is_pos(y) ? x : half(succ(x), dsucc(y));      // Se não refaz o comando com X+1 e Y-2
 }
 
 int main(void) {
