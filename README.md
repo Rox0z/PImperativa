@@ -24,14 +24,14 @@ int funcao(int num1, int num2)
     // os parâmetros (também chamados de argumentos) são os valores que você declara que a função precisa para seu funcionamento, eles são opcionais (você não precisa declarar eles caso a função não precise) e seus nomes são apenas locais, ou seja são independentes do resto do código fora da função, e a quantidade de argumentos vão de acordo com sua necessidade.
 
     // return é o comando de retornar um valor, ele deve retornar apenas o tipo do valor que foi declarado na função (aquele antes do nome da função), no nosso exemplo nossa função deve retornar um valor int, e já que nossos argumentos são de valor int, quando fazemos a operação de soma (+) o resultado será um int que vai ser retornado
-    return num1 + num2
+    return num1 + num2;
 }
 
 int main(void) 
 {
     // A função main é essencial e obrigatória em codigos em C, seu valor de retorno sempre deverá ser int, e sempre deverá retornar um valor, esses valores são como se fosse o status da função, sendo 0 significando que tudo ocorreu corretamente no nosso código.
 
-    printf("%d", funcao(2,3)) //printf (print formatado), é uma função importada pela biblioteca padrão de entrada e saída, que mostra no terminal um valor formatado, seu primeiro parâmetro é um texto que possui placeholders (simbolos que vão ser substituidos contendo informação de como vão ser substituidos) e o valor que vai substituir o placeholder, e no nosso exemplo ele vai imprimir um valor numérico (%d = número decimal inteiro) e esse placeholder %d vai ser substituido pelo valor que a função retorna, no caso a soma de 2 e 3
+    printf("%d", funcao(2,3)); //printf (print formatado), é uma função importada pela biblioteca padrão de entrada e saída, que mostra no terminal um valor formatado, seu primeiro parâmetro é um texto que possui placeholders (simbolos que vão ser substituidos contendo informação de como vão ser substituidos) e o valor que vai substituir o placeholder, e no nosso exemplo ele vai imprimir um valor numérico (%d = número decimal inteiro) e esse placeholder %d vai ser substituido pelo valor que a função retorna, no caso a soma de 2 e 3
     return 0;
 }
 ```
