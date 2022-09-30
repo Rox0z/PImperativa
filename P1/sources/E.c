@@ -11,7 +11,7 @@ int sum(int x, int y) { // Doc no exercicio B
     return is_zero(y) ? x : sum(succ(x), pred(y));
 }
 
-int neg_sum(int x, int y) { // Sum para numeros negativos
+int neg_sum(int x, int y) { // Sum para numeros negativos para não causar overflow e dar uma resposta mais rápida
     return is_zero(y) ? x : neg_sum(pred(x), succ(y));
 }
 
