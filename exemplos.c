@@ -1,16 +1,3 @@
-# PImperativa
----
-### Atividades práticas de programação imperativa
-
-- [x] - P1
-
-### Compilar todos os trabalhos de uma vez
-
-Dentro da Pasta P1 há um arquivo makefile que serve para executar uma série de comandos, e ele está configurado para compilar todos os arquivos .c da pasta sources para a pasta comps.
-Para executar você deverá estar dentro da pasta P1 no terminal e digitar `make` para que o comando compile todos os trabalhos.
-# Resumo de C
-
-```c
 
 #include <stdio.h>  
 // Include (#include <nome_da_biblioteca.h>) é um comando de importar uma biblioteca (conjunto de funções prontas) ao código, e stdio.h é o nome da biblioteca padrão (std = standart) de entrada e saida (io = in-out) que inclui como por exemplo as funções de scanf (receber um valor do usuário) e printf (escrever um valor dado) no terminal
@@ -51,4 +38,3 @@ int main(void)
     printf("%s\n",condicaoternaria(0));
     return 0;
 }
-```
