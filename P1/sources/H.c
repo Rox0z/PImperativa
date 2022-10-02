@@ -1,35 +1,37 @@
-//! Código interditado para reformas!!!! (simplificar e optmizar)
+#include <stdio.h>
 
-// #include <stdio.h>
+const char *author = "Leonardo Albudane";
 
-// const char *author = "Leonardo Albudane";
+int succ(int x);
+int pred(int x);
+int is_zero(int x);
+int is_pos(int x);
 
-// int succ(int x);
-// int pred(int x);
-// int is_zero(int x);
-// int is_pos(int x);
+int sum(int x, int y) { // Doc no exercicio B
+    return is_zero(y) ? x : sum(succ(x), pred(y));
+}
 
-// int sum(int x, int y) { // Doc no exercicio B
-//     return is_zero(y) ? x : sum(succ(x), pred(y));
-// }
 
-// int mult(int x, int y) { 
-//     return is_zero(x) || is_zero(y)     // Verifica se X ou Y são zero
-//     ? 0                                 // Se sim retorna 0 (0 * n == 0)
-//     : sum(x, mult(x, pred(y)));         // Se não soma com X e multiplicação de X com Y-1
-// }
+int twice(int x) { // Doc no exercicio D
+    return is_zero(x)
+    ? 0
+    : sum(x,x);
+}
 
-// int power(int x, int y) {
-//     return is_zero(y)                   // Verifica se Y == 0
-//     ? 1                                 // Se sim retorna 1
-//     : is_zero(pred(y))                  // Se não verifica se Y-1 == 0 (Y == 1)
-//         ? x                                 // Se sim retorna X (X ** 1 == X)
-//         : mult(power(x, pred(y)), x);       // Se não retorna multiplicação da potência de X e Y-1 com X
-// }
+int power2(int base, int expoente) {
+    // A lógica da exponenciação é um número tem que ser multiplicado por ele mesmo pela quantidade de vezes que seu expoente diz, e como queremos fazer isso da base 2, podemos usar twice, já que 2 * 2 também é 2 + 2
+    // Então o que podemos fazer é fazer twice(base) enquanto expoente for maior que 0, mas também precisamos lembrar das regras, se o expoente for 0, retornamos 1, se o expoente for 1, retornamos a base
+    return is_zero(expoente)    // Verificamos se o expoente é 0
+    ? 1                         // Se for retornamos 1 (regra da potência)
+    : is_zero(pred(expoente))   // Se não for nós verificamos se o expoente é 1 (verificando se X - 1 é 0)
+        ? base                                  // Se o expoente for 1, retornamos a base
+        : power2(twice(base), pred(expoente));  // Senão retornamos a potência com o dobro da base e o expoente - 1
+}
 
-// int main(void) {
-//     int x;
-//     scanf("%d", &x);
-//     printf("%d\n", power(succ(1), x));
-//     return 0;
-// }
+
+int main(void) {
+    int x;
+    scanf("%d", &x);
+    printf("%d\n", power2(succ(1), x));
+    return 0;
+}

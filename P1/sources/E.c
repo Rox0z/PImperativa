@@ -11,20 +11,16 @@ int sum(int x, int y) { // Doc no exercicio B
     return is_zero(y) ? x : sum(succ(x), pred(y));
 }
 
-int neg_sum(int x, int y) { // Sum para numeros negativos para não causar overflow e dar uma resposta mais rápida
-    return is_zero(y) ? x : neg_sum(pred(x), succ(y));
-}
-
 int twice(int x) { 
+    // Uma forma simples de achar o dobro é fazendo ele somar com ele mesmo, então podemos reutilizar a função de soma
+    // ! ATENÇÃO!!!: A função de soma precisa excepcionalmente de 2 valores, um para adicionar valor e um para retirar valor, que serão representados com X e Y dentro da função de soma, se você quer a soma de um número com ele mesmo, você pode apenas passar o mesmo número duas vezes, como no exemplo abaixo usamos X e X novamente.
     return is_zero(x)                   // Verifica se X == 0
     ? 0                                 // Se sim retorna 0 (0 * 2 == 0)
-    : is_pos(x)                         // Se não verifica se é positivo
-        ? sum(x,x)                          // Se sim soma X com X (X + X)
-        : neg_sum(x,x);                     // Se não faz a soma de numeros negativos de X com X ((-X) + (-X))
+    : sum(x,x);                         // Se não soma X com X (X * 2)
 }
 
 int main(void) {
-    int x;
+    int x; // Aqui removemos a variável Y pois não é necessaria, apenas precisamos de 1 valor
     scanf("%d", &x);
     printf("%d\n",twice(x));
     return 0;
