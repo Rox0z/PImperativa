@@ -13,9 +13,7 @@ int sum(int x, int y) { // Doc no exercicio B
 
 
 int twice(int x) { // Doc no exercicio D
-    return is_zero(x)
-    ? 0
-    : sum(x,x);
+    sum(x,x);
 }
 
 int power2(int base, int expoente) {
