@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <math.h>
 
-double sum_power_from(double resultado, double x, int y, int n)
+double sum_power_from(int n, double x, double y)
 {
-    return n < 0 ? resultado : sum_power_from(resultado + pow((n + x), y), x, y, n - 1);
+    return n < 0 ? 0 : sum_power_from(n - 1, x, y) + pow((n + x), y);
 }
 
 void test_sum_power_from()
@@ -12,7 +12,7 @@ void test_sum_power_from()
     int n;
     while (scanf("%lf%lf%d", &x, &y, &n) != EOF)
     {
-        printf("%f\n", sum_power_from(0, x, y, n));
+        printf("%f\n", sum_power_from(n, x, y));
     }
 }
 

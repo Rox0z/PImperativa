@@ -1,13 +1,13 @@
 #include <stdio.h>
 
-int sum_ints(int resultado, int n)
+int sum_ints(int n)
 {
-    return n == 0 ? resultado : sum_ints(resultado + n, n - 1);
+    return n == 0 ? 0 : sum_ints(n - 1)  + n;
 }
 
 int sum_mults(int n, int r)
 {
-    return sum_ints(0, n - 1) * r;
+    return sum_ints(n - 1) * r;
 }
 
 void test_sum_mults()

@@ -2,7 +2,7 @@
 
 int sum_progression(int x0, int r, int n)
 {
-    return n == 0 ? 0 : x0 + sum_progression(x0 + r, r, n - 1);
+    return n == 0 ? 0 : sum_progression(x0 + r, r, n - 1) + x0;
 }
 
 void test_sum_progression()

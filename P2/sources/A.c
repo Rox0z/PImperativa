@@ -1,17 +1,16 @@
 #include <stdio.h>
 
-int sum_ints(int resultado, int n)
+int sum_ints(int n)
 {
-    return n == 0 ? resultado : sum_ints(resultado + n, n - 1);
+    return n == 0 ? 0 : sum_ints(n - 1)  + n;
 }
 
 void test_sum_ints()
 {
     int n;
-    int r;
-    while (scanf("%d%d", &r, &n) != EOF)
+    while (scanf("%d", &n) != EOF)
     {
-        printf("%d\n", sum_ints(r, n));
+        printf("%d\n", sum_ints(n));
     }
 }
 

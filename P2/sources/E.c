@@ -2,7 +2,7 @@
 
 double sum_progression_dbl(double x0, double r, int n)
 {
-    return n == 0 ? 0 : x0 + sum_progression_dbl(x0 + r, r, n - 1);
+    return n == 0 ? 0 : sum_progression_dbl(x0 + r, r, n - 1) + x0;
 }
 
 void test_sum_progression_dbl()

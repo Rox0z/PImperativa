@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <math.h>
 
-double sum_squares_from(double resultado, double x, int n)
+double sum_squares_from(int n, double x)
 {
-    return n < 0 ? resultado : sum_squares_from(resultado + pow((n + x), 2), x, n - 1);
+    return n < 0 ? 0 : sum_squares_from(n - 1, x) + pow((n + x), 2);
 }
 
 void test_sum_squares_from()
@@ -12,7 +12,7 @@ void test_sum_squares_from()
     int n;
     while (scanf("%lf%d", &x, &n) != EOF)
     {
-        printf("%f\n", sum_squares_from(0, x, n - 1));
+        printf("%f\n", sum_squares_from(n - 1, x));
     }
 }
 
