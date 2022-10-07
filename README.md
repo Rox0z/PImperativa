@@ -3,6 +3,7 @@
 ### Atividades práticas de programação imperativa
 
 - [x] - P1
+- [x] - P2 (Sem documentação)
 
 ### Compilar todos os trabalhos de uma vez
 
