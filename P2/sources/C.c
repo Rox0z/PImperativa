@@ -7,7 +7,7 @@ int sum_ints(int n)
 
 int sum_mults(int n, int r)
 {
-    return sum_ints(n - 1) * r;
+    return n == 0 ? 0 : sum_ints(n - 1) * r;
 }
 
 void test_sum_mults()
