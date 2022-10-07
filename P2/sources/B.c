@@ -2,7 +2,7 @@
 
 double sum_ints(double n)
 {
-    return n == 0 ? 0 : sum_ints(n - 1)  + n;
+    return n == 0 ? 0 : sum_ints(n - 1) + n;
 }
 
 double avg_sum_ints(double n)

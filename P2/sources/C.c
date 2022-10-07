@@ -2,7 +2,7 @@
 
 int sum_ints(int n)
 {
-    return n == 0 ? 0 : sum_ints(n - 1)  + n;
+    return n == 0 ? 0 : sum_ints(n - 1) + n;
 }
 
 int sum_mults(int n, int r)

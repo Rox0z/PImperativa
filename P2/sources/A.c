@@ -2,7 +2,7 @@
 
 int sum_ints(int n)
 {
-    return n == 0 ? 0 : sum_ints(n - 1)  + n;
+    return n == 0 ? 0 : sum_ints(n - 1) + n;
 }
 
 void test_sum_ints()
