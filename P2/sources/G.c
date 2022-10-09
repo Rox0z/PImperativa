@@ -12,7 +12,7 @@ void test_sum_power_from()
     int n;
     while (scanf("%lf%lf%d", &x, &y, &n) != EOF)
     {
-        printf("%f\n", sum_power_from(n, x, y));
+        printf("%f\n", sum_power_from(n-1, x, y));
     }
 }
 
