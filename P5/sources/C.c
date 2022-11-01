@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+const char *author = "Leonardo Marinho Albudane";
+
 void minmax(double *ar, int size)
 {
     double max = ar[0], min = ar[0];
