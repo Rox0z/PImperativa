@@ -2,15 +2,9 @@
 
 const char *author = "Leonardo Marinho Albudane";
 
-int split(int value)
+int split(int value, int res)
 {
-    int res = 0;
-    while (value)
-    {
-        res += value % 10;
-        value /= 10;
-    }
-    return res;
+    return value == 0 ? res : split(value/10, res + (value % 10));
 }
 
 void test(void)
@@ -21,7 +15,7 @@ void test(void)
         i++;
 
     for (int j = 0; j < i; j++)
-        printf("%d\n", split(ar[j]));
+        printf("%d\n", split(ar[j], 0));
 }
 
 int main(void)
