@@ -12,6 +12,11 @@ void minmax(double *ar, int size)
     }    
     printf("%d\n%d\n%f\n", max, min, ar[max]+ar[min]);
 }
+// 0 1
+// 1 2
+// 2 3
+// 3 4
+// 4 3
 
 void test(void)
 {

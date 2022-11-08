@@ -19,8 +19,6 @@ void test(void)
     int i = 0;
     while (scanf("%lf", &ar[i]) != EOF)
         i++;
-
-    minmax(ar, i);
 }
 
 int main(void)
