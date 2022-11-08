@@ -1,38 +1,28 @@
 #include <stdio.h>
 
-int pares_impares(int *array)
-{
-    int impares = 0; 
-    int pares = 0;
-    for (int i = 0; i <= 19; i++)
-    {
-        if (array[i] % 2 == 0)
-        {
-            pares = pares + array[i];
-        } 
-        else 
-        {
-            impares = impares + array[i];
-        }
-    }
+const char *author = "Leonardo Marinho Albudane";
 
-    return pares - impares;
+int unmerge(int *ar)
+{
+    int ip = 0, p = 0;
+    for (int i = 0; i <= 19; i++)
+        ar[i] % 2 == 0 ? (p += ar[i]) : (ip += ar[i]); 
+
+    return (p - ip);
 }
 
-void test_pares_impares(void)
+void test(void)
 {
-    int array[20] = {};
+    int ar[20] = {};
     int i = 0;
-    while (scanf("%d", &array[i]) != EOF)
-    {
+    while (scanf("%d", &ar[i]) != EOF && i < 19)
         i++;
-    }
 
-    printf("%d\n", pares_impares(array));
+    printf("%d\n", unmerge(ar));
 }
 
 int main(void)
 {
-    test_pares_impares();
+    test();
     return 0;
 }
