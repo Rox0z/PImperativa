@@ -4,11 +4,8 @@
 int sum_positions_minus_odd_positions(const int *a, int n)
 {
     int resultado = 0;
-    for (int i = n, j = n % 2 ? n : n - 1; i >= 0; i--, j = j - 2 <= 0 ? 0 : j - 2)
-    {
-        // printf("array[%d] - %d | array[%d] - %d\n", i, a[i], j, j == 0 ? 0 : a[j]);
-        (resultado += a[i], resultado -= j == 0 ? 0 : a[j]);
-    }
+    for (int i = n; i >= 0; i--)
+        (resultado += a[i], resultado -= i % 2 ? a[i] : 0);
 
     return resultado;
 }
