@@ -5,14 +5,14 @@ int sum_positions_minus_odd_positions(const int *a, int n)
 {
     int resultado = 0;
     for (int i = n; i >= 0; i--)
-        (resultado += a[i], resultado -= i % 2 ? a[i] : 0);
+        (resultado += i % 2 ? 0 : a[i]);
 
     return resultado;
 }
 
 void test(void)
 {
-    int x[1000] = {}, i = 0;
+    int x[100] = {}, i = 0;
 
     while (scanf("%d", &x[i]) != EOF)
         i++;
