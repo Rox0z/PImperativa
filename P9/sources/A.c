@@ -1,42 +1,42 @@
 #include <assert.h>
 #include <stdio.h>
 
-int sum_positions_minus_odd_positions(const int *a, int n)
+int sum_positions_minus_odd_positions(const int *array, int total)
 {
-    int resultado = 0;
-    for (int i = n; i >= 0; i--)
-        (resultado += i % 2 ? 0 : a[i]);
+    int sum_odd_positions = 0;
+    int sum_total = 0;
+    for (int i = 0; i < total; i++)
+    {
+        sum_total += array[i];
+        if (i % 2 == 1)
+        {
+            sum_odd_positions += array[i];
+        }
+    }
 
-    return resultado;
+    return sum_total - sum_odd_positions;
 }
 
-void test(void)
+void teste(void)
 {
-    int x[100] = {}, i = 0;
+    int array[1000] = {};
+    int i = 0;
 
-    while (scanf("%d", &x[i]) != EOF)
+    while (scanf("%d", &array[i]) != EOF)
         i++;
-    printf("%d\n", sum_positions_minus_odd_positions(x, i - 1));
+
+    printf("%d\n", sum_positions_minus_odd_positions(array, i));
 }
 
 void unit_test_sum_positions_minus_odd_positions(void)
 {
-    int a0[8] = {1, 2, 3, 4, 5, 6, 7, 8};
-    int a1[8] = {8, 7, 6, 5, 4, 3, 2, 1};
-    int a2[8] = {0, 0, 0, 0, 0, 0, 0, 0};
-    int a3[8] = {1, 1, 1, 1, 1, 1, 1, 1};
-    int a4[10] = {3, 4, 5, 3, 7, 2, 9, 3, 1, 6};
-
-    assert(sum_positions_minus_odd_positions(a0, 7) == 16);
-    assert(sum_positions_minus_odd_positions(a1, 7) == 20);
-    assert(sum_positions_minus_odd_positions(a2, 7) == 0);
-    assert(sum_positions_minus_odd_positions(a3, 7) == 4);
-    assert(sum_positions_minus_odd_positions(a4, 9) == 25);
+    int input[8] = {0, 1, 2, 3, 4, 5, 6, 7};
+    assert(sum_positions_minus_odd_positions(input, 8) == 12);
 }
 
 int main(void)
 {
     unit_test_sum_positions_minus_odd_positions();
-    test();
+    teste();
     return 0;
 }
