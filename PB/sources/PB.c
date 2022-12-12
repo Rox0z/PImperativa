@@ -2,7 +2,7 @@
 #include <assert.h>
 
 // ---------------------------------------------Problem A--------------------------------------------- //
-int alpha_2(char *sub, char *string)
+int alpha_2(char *code, char *country)
 {
     for (; *country != '\0'; country++)
         if (code[0] == country[0])
