@@ -2,12 +2,10 @@
 
 int points(const int *contests, int n)
 {
-    int total = 0;
-    for (int i = 0; i < n / 2; i++)
-    {
-        total += contests[(n / 2) + i] ? (contests[(n / 2) + i] >= ((contests[i] % 2 ? contests[i] + 1 : contests[i]) / 2)) ? (contests[(n / 2) + i] * 3) + 1 : (contests[(n / 2) + i] * 3) : 0;
-    }
-    return total;
+    int resultado = 0;
+    for (int i = 0, j = n / 2; i < n / 2; i++, j++)
+        resultado = contests[j] * 2 >= contests[i] ? (contests[j] * 3) + 1 : contests[j] * 3;
+    return resultado;
 }
 
 void test(void)
